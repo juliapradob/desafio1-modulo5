@@ -1,12 +1,36 @@
 import './App.css'
 import Menu from './components/Menu'
 import Form from './components/Form'
+import Card from './components/Card'
+import { buscaProduto } from './service/requisicao.js'
+import { useState } from 'react'
 
 function App() {
+
+  const [image, setImage] = useState('')
+  const [nome, setName] = useState('')
+  const [descricao, setDescricao] = useState('')
+  const [precoAntigo, setPrecoAntigo] = useState('')
+  const [precoAtual, setPrecoAtual] = useState('')
+  const [precoParcelado, setPrecoParcelado] = useState('')
+
+  useEffect(() => {
+    buscaProduto().then(data => {
+      setImage(data.image)
+      setNome(data.name)
+      setDescricao(data.description)
+      setPrecoAntigo(`R$${data.oldPrice}`)
+      setPrecoAtual(`R$${data.prices}`)
+      setPrecoParcelado(`${data.count}x de R$${data.value}`)
+    })
+  }, [])
+
   return (
     <div className='App'>
-      <div className='menu'>
-        <Menu />
+      <div className='menu-father'>
+        <div className='menu-pos'>
+          <Menu />
+        </div>
       </div>
       <div className='hero'>
         <div className='heroRight'>
@@ -16,6 +40,17 @@ function App() {
         <div className='heroLeft'>
           <Form />
         </div>
+      </div>
+      <div className='selecaoProdutos'>
+        <div className='titulo'>
+          <h3><span>Sua seleção especial</span></h3>
+        </div>
+        <Card nome='teste' 
+        descricao='teste'
+        precoAntigo='R$2'
+        precoAtual='R$2'
+        precoParcelado='2x de R$1'
+        cta='COMPRAR'/>
       </div>
     </div>
   )

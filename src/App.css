@@ -6,44 +6,63 @@ body {
   background-color: white;
 }
 
-.menu {
+.menu-father {
+  background-color: #707070;
+  height: 160px;
+  margin-bottom: 250px;
+}
+
+.menu-pos {
   background-color: #707070;
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding: 40px 0 160px;
+  padding: 40px 0 120px;
   overflow: visible;
   text-align: center;
+  -webkit-transform: skewY(2deg);
+  -moz-transform: skewY(2deg);
+  -ms-transform: skewY(2deg);
+  -o-transform: skewY(2deg);
+  transform: skewY(2deg);
 }
 
-.menu h1 {
+.menu-neg {
+  -webkit-transform: skewY(-2deg);
+  -moz-transform: skewY(-2deg);
+  -ms-transform: skewY(-2deg);
+  -o-transform: skewY(-2deg);
+  transform: skewY(-2deg);
+}
+
+.menu-pos h1 {
   color: white;
   font-weight: 700;
   font-size: 40px;
   line-height: 60px;
 }
 
-.menu h2 {
+.menu-pos h2 {
   color: white;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
 }
 
-.menu p {
+.menu-pos p {
   color: white;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
 }
 
-.menu a {
+.menu-pos a {
   font-weight: 500;
   color: #888888;
   text-decoration: none;
 }
 
-.menu button {
+.menu-pos button {
   border-radius: 4px;
   border: 1px solid #707070;
   box-shadow: 0px 1px 6px #00000029;
@@ -60,7 +79,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 20px 200px 20px;
+  margin: 20px auto 20px;
   gap: 5%;
   width: 60%;
 }
@@ -76,6 +95,10 @@ body {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
+}
+
+.heroLeft {
+  margin-bottom: 80px;
 }
 
 .heroLeft form {
@@ -121,4 +144,20 @@ body {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
+}
+
+.selecaoProdutos h3 {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 0.1em;
+  color: #888888;
+  border-bottom: 1px solid #888888;
+  margin: 10px 0 20px;
+}
+
+.selecaoProdutos span {
+  background: #FFFFFF;
+  padding: 0 10px;
 }
