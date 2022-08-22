@@ -9,11 +9,11 @@ const Form = () => {
         <div className='heroLeftSexo'>
             <div>
                 <input type='radio' value='Masculino' id='masculino' name='sexo'></input>
-                <label for='masculino'>Masculino</label>
+                <label>Masculino</label>
             </div>
             <div>
                 <input type='radio' value='Feminino' id='feminino' name='sexo'></input>
-                <label for='feminino'>Feminino</label> 
+                <label>Feminino</label> 
             </div>
         </div>
         <button>Enviar</button>

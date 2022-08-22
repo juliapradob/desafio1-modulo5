@@ -2,20 +2,20 @@ import './App.css'
 import Menu from './components/Menu'
 import Form from './components/Form'
 import Card from './components/Card'
-import { buscaProduto } from './service/requisicao.js'
-import { useState } from 'react'
+import { buscaProdutos } from './service/requisicao.js'
+import { useState, useEffect } from 'react'
 
 function App() {
 
   const [image, setImage] = useState('')
-  const [nome, setName] = useState('')
+  const [nome, setNome] = useState('')
   const [descricao, setDescricao] = useState('')
   const [precoAntigo, setPrecoAntigo] = useState('')
   const [precoAtual, setPrecoAtual] = useState('')
   const [precoParcelado, setPrecoParcelado] = useState('')
 
   useEffect(() => {
-    buscaProduto().then(data => {
+    buscaProdutos().then(data => {
       setImage(data.image)
       setNome(data.name)
       setDescricao(data.description)
@@ -45,11 +45,12 @@ function App() {
         <div className='titulo'>
           <h3><span>Sua seleção especial</span></h3>
         </div>
-        <Card nome='teste' 
-        descricao='teste'
-        precoAntigo='R$2'
-        precoAtual='R$2'
-        precoParcelado='2x de R$1'
+        <Card image={image}
+        nome={nome}
+        descricao={descricao}
+        precoAntigo={precoAntigo}
+        precoAtual={precoAtual}
+        precoParcelado={precoParcelado}
         cta='COMPRAR'/>
       </div>
     </div>

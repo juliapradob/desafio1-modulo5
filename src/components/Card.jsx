@@ -1,6 +1,6 @@
 const Card = (props) => {
     return (<div>
-            <img/>
+            <img src={props.image}/>
             <h4>{props.nome}</h4>
             <p>{props.descricao}</p>
             <p>{props.precoAntigo}</p>
